@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Submit feedback and browse Toy Haven frequently asked questions.">
+  <meta name="theme-color" content="#111111">
+  <title>Feedback &amp; Support | Toy Haven</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-wrap" href="../index.html" aria-label="Toy Haven home">
+        <div class="logo-box" aria-hidden="true">
+          <img src="../assets/images/logo.png" alt="TH">
+        </div>
+        <span class="brand">Toy Haven</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="header-tools">
+        <label class="header-search" for="globalSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search products" aria-label="Search products">
+        </label>
+        <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+          🛒 <span class="cart-count" aria-live="polite">0</span>
+        </a>
+        <a class="login-link" href="login.html" aria-label="Sign up or login">Sign up / Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <section class="container support-page">
+      <div class="page-heading reveal">
+        <h1>Feedback & Support</h1>
+        <p>Tell us about your experience or find quick answers below.</p>
+      </div>
+
+      <div class="support-grid">
+        <section class="feedback-card reveal" aria-labelledby="feedbackTitle">
+          <h2 id="feedbackTitle">Send feedback</h2>
+          <form id="feedbackForm" novalidate>
+
+            <div class="field">
+              <label for="feedbackName">Name</label>
+              <input id="feedbackName" name="name" required minlength="2">
+              <small class="error"></small>
+            </div>
+
+            <div class="field">
+              <label for="feedbackEmail">Email</label>
+              <input id="feedbackEmail" name="email" type="email" required>
+              <small class="error"></small>
+            </div>
+
+            <div class="field">
+              <label for="feedbackMessage">Message</label>
+              <textarea id="feedbackMessage" name="message" rows="6" required minlength="10"></textarea>
+              <small class="error"></small>
+            </div>
+
+            <button class="btn btn-dark" type="submit">Submit feedback</button>
+            <p id="feedbackSuccess" class="form-message" aria-live="polite"></p>
+          </form>
+          
+        </section>
+
+        <section class="faq-card reveal" id="faq" aria-labelledby="faqTitle">
+
+          <h2 id="faqTitle">Frequently Asked Questions</h2>
+          <div class="accordion">
+
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">How long does delivery take?<span>+</span></button>
+              <div class="faq-answer"><p>Standard delivery takes around 6–7 business days. Express delivery takes around 3–4 business days.</p></div>
+            </article>
+            
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Can I save products for later?<span>+</span></button>
+              <div class="faq-answer"><p>Yes. Use the wishlist button on any product card, then manage your collection status on the Wishlist page.</p></div>
+            </article>
+
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Is my cart saved if I refresh?<span>+</span></button>
+              <div class="faq-answer"><p>Yes. Cart data is stored in localStorage until you clear the cart or successfully complete checkout.</p></div>
+            </article>
+
+          </div>
+
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+      <section>
+        <h2>About Toy Haven</h2>
+        <p>Discover collectible figurines, board games, toys and diecast cars in one easy shopping experience.</p>
+        <form class="newsletter-form" novalidate>
+          <label for="newsletterEmail">Newsletter</label>
+          <div class="newsletter-row">
+            <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section>
+        <h2>Branches</h2>
+        <ul class="footer-links">
+          <li>Kandy</li><li>Colombo</li><li>Kurunegala</li><li>Kegalle</li><li>Matale</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>More</h2>
+        <ul class="footer-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="wishlist.html">Collection</a></li>
+          <li><a href="support.html#faq">FAQ</a></li>
+          <li><a href="support.html">Feedback</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>0117459901<br><a href="mailto:toyhaven@gmail.com">toyhaven@gmail.com</a></p>
+      </section>
+    </div>
+    <div class="copyright">COPYRIGHT © <span id="currentYear"></span> TOYHAVEN.COM. ALL RIGHTS RESERVED</div>
+  </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="../script/data.js"></script>
+<script src="../script/main.js"></script>
+<script src="../script/support.js"></script>
+</body>
+</html>

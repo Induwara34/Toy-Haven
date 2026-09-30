@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete your Toy Haven order with validated delivery and payment details.">
+  <meta name="theme-color" content="#111111">
+  <title>Checkout | Toy Haven</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-wrap" href="..index.html" aria-label="Toy Haven home">
+        <div class="logo-box" aria-hidden="true">
+          <img src="../assets/images/logo.png" alt="TH">
+        </div>
+        <span class="brand">Toy Haven</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="header-tools">
+        <label class="header-search" for="globalSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search products" aria-label="Search products">
+        </label>
+        <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+          🛒 <span class="cart-count" aria-live="polite">0</span>
+        </a>
+        <a class="login-link" href="login.html" aria-label="Sign up or login">Sign up / Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <section class="container checkout-page reveal">
+      <div class="checkout-header">
+        <h1>Checkout</h1>
+        <div class="steps" aria-label="Checkout progress">
+          <button class="step active" data-step="address" type="button">Address</button>
+          <span></span>
+          <button class="step" data-step="shipping" type="button" disabled>Shipping</button>
+          <span></span>
+          <button class="step" data-step="payment" type="button" disabled>Payment</button>
+        </div>
+      </div>
+
+      <div class="checkout-grid">
+
+        <section class="checkout-main">
+          <form id="checkoutForm" novalidate>
+
+            <section class="checkout-panel active" data-panel="address">
+              <h2>Shipping Information</h2>
+              <div class="form-grid two">
+
+                <div class="field">
+                  <label for="fullName">Full Name</label>
+                  <input id="fullName" name="fullName" autocomplete="name" required minlength="3">
+                  <small class="error"></small>
+                </div>
+
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                  <small class="error"></small>
+                </div>
+
+              </div>
+
+              <div class="field">
+                <label for="address">Delivery Address</label>
+                <input id="address" name="address" autocomplete="street-address" required minlength="6">
+                <small class="error"></small>
+              </div>
+
+              <div class="form-grid three">
+                <div class="field">
+                  <label for="city">City</label>
+                  <input id="city" name="city" required>
+                  <small class="error"></small>
+                </div>
+
+                <div class="field">
+                  <label for="country">Country</label>
+                  <select id="country" name="country" required>
+                    <option value="">Choose</option>
+                    <option>Sri Lanka</option>
+                  </select>
+                  <small class="error">
+
+                  </small>
+                </div>
+
+                <div class="field">
+                  <label for="zip">Zip code</label>
+                  <input id="zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" required>
+                  <small class="error"></small>
+                </div>
+
+              </div>
+
+              <button class="btn btn-dark full next-step" data-next="shipping" type="button">Continue to shipping</button>
+
+            </section>
+
+            <section class="checkout-panel" data-panel="shipping">
+
+              <h2>Shipping</h2>
+              <label class="shipping-option selected">
+
+                <input type="radio" name="shipping" value="Standard Delivery" data-cost="0" checked>
+                <span><strong>Standard Delivery</strong><small>6–7 Business Days</small></span>
+                <strong>Free</strong>
+
+              </label>
+
+              <label class="shipping-option">
+
+                <input type="radio" name="shipping" value="Express Delivery" data-cost="750">
+                <span><strong>Express Delivery</strong><small>3–4 Business Days</small></span>
+                <strong>LKR 750</strong>
+
+              </label>
+
+              <div class="checkout-actions">
+                <button class="btn prev-step" data-prev="address" type="button">Go back</button>
+                <button class="btn btn-dark next-step" data-next="payment" type="button">Continue to payment</button>
+              </div>
+
+            </section>
+
+            <section class="checkout-panel" data-panel="payment">
+
+              <h2>Payment</h2>
+              <div class="payment-tabs" role="radiogroup" aria-label="Payment method">
+                <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="Card" checked>
+                    <span>Card</span>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="paymentMethod" value="Cash on Delivery">
+                    <span>Cash on Delivery</span>
+                </label>
+
+              </div>
+
+              <div id="cardFields">
+
+                <div class="field">
+                  <label for="cardName">Cardholder Name</label>
+                  <input id="cardName" name="cardName">
+                  <small class="error"></small>
+                </div>
+
+                <div class="field">
+                  <label for="cardNumber">Card Number</label>
+                  <input id="cardNumber" name="cardNumber" inputmode="numeric" maxlength="19">
+                  <small class="error"></small>
+                </div>
+
+                <div class="form-grid three">
+                  <div class="field"><label for="expiryMonth">Month</label><select id="expiryMonth" name="expiryMonth"><option value="">Month</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select><small class="error"></small></div>
+                  <div class="field"><label for="expiryYear">Year</label><select id="expiryYear" name="expiryYear"><option value="">Year</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option></select><small class="error"></small></div>
+                  <div class="field"><label for="cvc">CVC</label><input id="cvc" name="cvc" inputmode="numeric" maxlength="4"><small class="error"></small></div>
+                </div>
+
+              </div>
+
+              <div class="checkout-actions">
+                <button class="btn prev-step" data-prev="shipping" type="button">Go back</button>
+                <button class="btn btn-dark" type="submit">Confirm Order</button>
+              </div>
+
+            </section>
+
+          </form>
+          
+        </section>
+
+        <aside class="checkout-summary" aria-labelledby="checkoutSummaryTitle">
+
+          <h2 id="checkoutSummaryTitle">Your cart</h2>
+          <div id="checkoutItems"></div>
+          <div class="summary-row"><span>Subtotal</span><strong id="checkoutSubtotal">LKR 0</strong></div>
+          <div class="summary-row"><span>Shipping</span><strong id="checkoutShipping">LKR 0</strong></div>
+          <div class="summary-row total"><span>Final Total</span><strong id="checkoutTotal">LKR 0</strong></div>
+
+        </aside>
+      </div>
+      
+    </section>
+
+    <div class="success-overlay" id="successOverlay" aria-hidden="true">
+      <div class="success-card" role="status">
+        <div class="success-icon">✓</div>
+        <h2>Order confirmed!</h2>
+        <p>Your order has been stored successfully.</p>
+        <a class="btn btn-dark" href="../index.html">Return Home</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h2>About Toy Haven</h2>
+        <p>Discover collectible figurines, board games, toys and diecast cars in one easy shopping experience.</p>
+        <form class="newsletter-form" novalidate>
+          <label for="newsletterEmail">Newsletter</label>
+
+          <div class="newsletter-row">
+            <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+
+      </section>
+
+      <section>
+        <h2>Branches</h2>
+        <ul class="footer-links">
+          <li>Kandy</li><li>Colombo</li><li>Kurunegala</li><li>Kegalle</li><li>Matale</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>More</h2>
+        <ul class="footer-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="wishlist.html">Collection</a></li>
+          <li><a href="support.html#faq">FAQ</a></li>
+          <li><a href="support.html">Feedback</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>0117459901<br><a href="mailto:toyhaven@gmail.com">toyhaven@gmail.com</a></p>
+      </section>
+
+    </div>
+
+    <div class="copyright">COPYRIGHT © <span id="currentYear"></span> TOYHAVEN.COM. ALL RIGHTS RESERVED</div>
+
+  </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="../script/data.js"></script>
+<script src="../script/main.js"></script>
+<script src="../script/checkout.js"></script>
+</body>
+</html>

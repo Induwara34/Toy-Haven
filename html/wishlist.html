@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage saved Toy Haven products and collection status.">
+  <meta name="theme-color" content="#111111">
+  <title>Wishlist | Toy Haven</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.json">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+      <a class="brand-wrap" href="../index.html" aria-label="Toy Haven home">
+        <div class="logo-box" aria-hidden="true">
+          <img src="../assets/images/logo.png" alt="TH">
+        </div>
+        <span class="brand">Toy Haven</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="support.html">Support</a>
+      </nav>
+
+      <div class="header-tools">
+
+        <label class="header-search" for="globalSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search products" aria-label="Search products">
+        </label>
+
+        <a class="cart-link" href="cart.html" aria-label="Shopping cart">
+          🛒 <span class="cart-count" aria-live="polite">0</span>
+        </a>
+        <a class="login-link" href="login.html" aria-label="Sign up or login">Sign up / Login</a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+  <section class="container collection-page reveal">
+    <div class="page-heading">
+      <h1>Wishlist / Collection</h1>
+      <p>Save products and track whether you are interested, already own them, or are no longer interested.</p>
+    </div>
+    <div id="wishlistGrid" class="product-grid"></div>
+    <div id="wishlistEmpty" class="empty-state hidden">
+      <h2>Your wishlist is empty</h2>
+      <p>Add products from the shop page.</p>
+      <a class="btn" href="products.html">Browse products</a>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h2>About Toy Haven</h2>
+        <p>Discover collectible figurines, board games, toys and diecast cars in one easy shopping experience.</p>
+        <form class="newsletter-form" novalidate>
+          <label for="newsletterEmail">Newsletter</label>
+          <div class="newsletter-row">
+            <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section>
+        <h2>Branches</h2>
+        <ul class="footer-links">
+          <li>Kandy</li><li>Colombo</li><li>Kurunegala</li><li>Kegalle</li><li>Matale</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>More</h2>
+        <ul class="footer-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="wishlist.html">Collection</a></li>
+          <li><a href="support.html#faq">FAQ</a></li>
+          <li><a href="support.html">Feedback</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>0117459901<br><a href="mailto:toyhaven@gmail.com">toyhaven@gmail.com</a></p>
+      </section>
+    </div>
+    <div class="copyright">COPYRIGHT © <span id="currentYear"></span> TOYHAVEN.COM. ALL RIGHTS RESERVED</div>
+  </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="../script/data.js"></script>
+<script src="../script/main.js"></script>
+<script src="../script/wishlist.js"></script>
+</body>
+</html>

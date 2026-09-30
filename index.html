@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Toy Haven home page with featured toys, board games, figurines and diecast cars.">
+  <meta name="theme-color" content="#111111">
+  <title>Home | Toy Haven</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-wrap" href="html/index.html" aria-label="Toy Haven home">
+        <div class="logo-box" aria-hidden="true">
+          <img src="assets/images/logo.png" alt="TH">
+        </div>
+        <span class="brand">Toy Haven</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="html/products.html">Shop</a>
+        <a href="html/wishlist.html">Wishlist</a>
+        <a href="html/support.html">Support</a>
+      </nav>
+
+      <div class="header-tools">
+        <label class="header-search" for="globalSearch">
+          <span aria-hidden="true">⌕</span>
+          <input id="globalSearch" type="search" placeholder="Search products" aria-label="Search products">
+        </label>
+        <a class="cart-link" href="html/cart.html" aria-label="Shopping cart">
+          🛒 <span class="cart-count" aria-live="polite">0</span>
+        </a>
+        <a class="login-link" href="html/login.html" aria-label="Sign up or login">Sign up / Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+  <section class="hero reveal" aria-label="Promotions">
+
+      <div class="hero-slide active" data-slide="0"
+      style="background-image: url('assets/images/diecast collection.jpg');">
+
+      <div class="hero-overlay">
+          <p class="eyebrow">Big promotional banner</p>
+          <h1>NEW DIECAST COLLECTION</h1>
+          <a class="btn" href="html/products.html?category=Diecast%20Cars">Shop Now</a>
+      </div>
+
+  </div>
+
+      <div class="hero-slide" data-slide="1"
+      style="background-image: url('assets/images/board games for everyone.jpg');">
+
+      <div class="hero-overlay">
+          <p class="eyebrow">Game night essentials</p>
+          <h1>BOARD GAMES FOR EVERYONE</h1>
+          <a class="btn" href="html/products.html?category=Board%20Games">Shop Now</a>
+      </div>
+
+  </div>
+
+      <div class="hero-slide" data-slide="2"
+      style="background-image: url('assets/images/limited figurine picks.jpg');">
+
+      <div class="hero-overlay">
+          <p class="eyebrow">For collectors</p>
+          <h1>LIMITED FIGURINE PICKS</h1>
+          <a class="btn" href="html/products.html?category=Figurines">Shop Now</a>
+      </div>
+
+  </div>
+
+      <div class="hero-dots" aria-label="Promotion controls"></div>
+
+  </section>
+
+  <section class="container section-block reveal">
+    <div class="section-banner"><h2>CHECK OUT WHAT'S NEW!</h2></div>
+    <div class="featured-grid" id="featuredGrid"></div>
+    <div class="center-action"><a class="btn" href="html/products.html">Shop All</a></div>
+  </section>
+
+  <section class="container product-day reveal"
+          aria-labelledby="productDayTitle">
+      <div class="product-day-info">
+          <p class="eyebrow">Updated daily</p>
+          <h2 id="productDayTitle">
+              Featured Product of the Day
+          </h2>
+          <p id="productDayText"></p>
+          <button
+              class="btn btn-dark"
+              id="productDayButton">
+              View Product
+          </button>
+      </div>
+      <div
+          class="product-day-visual"
+          id="productDayVisual">
+      </div>
+
+  </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="container footer-grid">
+      <section>
+        <h2>About Toy Haven</h2>
+        <p>Discover collectible figurines, board games, toys and diecast cars in one easy shopping experience.</p>
+
+        <form class="newsletter-form" novalidate>
+
+          <label for="newsletterEmail">Newsletter</label>
+
+          <div class="newsletter-row">
+            <input id="newsletterEmail" name="email" type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </div>
+
+          <p class="form-message" aria-live="polite"></p>
+        </form>
+
+      </section>
+
+      <section>
+        <h2>Branches</h2>
+        <ul class="footer-links">
+          <li>Kandy</li><li>Colombo</li><li>Kurunegala</li><li>Kegalle</li><li>Matale</li>
+        </ul>
+      </section>
+
+      <section>
+
+        <h2>More</h2>
+        <ul class="footer-links">
+          <li><a href="html/products.html">Products</a></li>
+          <li><a href="html/wishlist.html">Collection</a></li>
+          <li><a href="html/support.html#faq">FAQ</a></li>
+          <li><a href="html/support.html">Feedback</a></li>
+        </ul>
+
+      </section>
+
+      <section>
+
+        <h2>Contact</h2>
+        <p>0117459901<br><a href="mailto:toyhaven@gmail.com">toyhaven@gmail.com</a></p>
+      </section>
+    </div>
+
+    <div class="copyright">COPYRIGHT © <span id="currentYear"></span> TOYHAVEN.COM. ALL RIGHTS RESERVED</div>
+
+  </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="script/main.js"></script>
+<script src="script/home.js"></script>
+<script src="script/sampleDB.js"></script>
+</body>
+</html>
